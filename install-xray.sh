@@ -351,7 +351,7 @@ WantedBy=multi-user.target
 EOF
 cat > /etc/systemd/system/runn.service <<EOF
 [Unit]
-Description=Mampus-Anjeng
+Description=Cincop by. 88numb
 After=network.target
 
 [Service]
