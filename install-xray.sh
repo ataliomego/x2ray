@@ -74,10 +74,11 @@ rm -rf /etc/nginx/conf.d/alone.conf
 
 mkdir -p /home/vps/public_html
 
-# set uuid
-uuid9=$(cat /proc/sys/kernel/random/uuid)
-
-uuid=b8458948-a630-4e6d-809a-230b2223ff3d
+# Generate UUID if not exists
+    if [ ! -f "/etc/xray/uuid.txt" ]; then
+        generate_uuid > /etc/xray/uuid.txt
+    fi
+    uuid=$(cat /etc/xray/uuid.txt)
 
 # xray config
 cat > /etc/xray/config.json << END
